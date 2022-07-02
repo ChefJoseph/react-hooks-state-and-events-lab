@@ -1,23 +1,29 @@
-import React from "react";
-import Item from "./Item";
+import React, {useState} from 'react'
+// import Item from "./Item"
+import Filter from "./Filter"
+import itemsData from "../data/items"
 
-function ShoppingList({ items }) {
+
+function ShoppingList({items}) {
+    const [selectCategory, setselectCategory]= useState("All")
+    const [search, setSearch] = useState("")
+
+    function handleCategoryChange(e) {
+    setselectCategory(e.target.value)  
+    }
+
+    const display = items
+    .filter(item => {
+    if (selectCategory === "All")
+    {return true}
+    else
+    {return item.category === selectCategory}
+    })
+
+    .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
+    
   return (
-    <div className="ShoppingList">
-      <div className="Filter">
-        <select name="filter">
-          <option value="All">Filter by category</option>
-          <option value="Produce">Produce</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Dessert">Dessert</option>
-        </select>
-      </div>
-      <ul className="Items">
-        {items.map((item) => (
-          <Item key={item.id} name={item.name} category={item.category} />
-        ))}
-      </ul>
-    </div>
+   <Filter change = {handleCategoryChange} display = {display} search = {search} onSearchChange = {setSearch}/>
   );
 }
 

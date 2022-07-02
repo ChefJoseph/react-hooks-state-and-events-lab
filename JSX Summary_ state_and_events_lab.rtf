@@ -1,0 +1,77 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 App
+\f1\b0 \
+\
+Import react, \{useState\}\
+import ShoppingList\
+Import ItemData\
+\
+Function App() \{\
+	const [state, set state]= useState(start state)\
+	Function handleClick() \{\
+		set State ( () =>   )\}\
+	const \'93action\'94 - ternary arg -to change app class\
+\
+	Return (\
+	jsx\
+		(On button) onClick with \{handleClick\} function\
+		(Button value) \{Ternary argument for text\}\
+		<ShoppingList Insert Import location and data = \{itemData\} />\
+)\
+\}\
+\
+Export default App\
+\
+
+\f0\b ShoppingList
+\f1\b0 \
+\
+Import react, \{useState\}\
+Import Item\
+\
+Function ShoppingList(\{prop.\}) \{\
+	const [state, set state] = useState(start state)\
+	function handleChange(event) //event for value \{\
+		set state(e.target.value)\
+	const \'93action\'94 display = props.filter => ((item) => \{\
+		if (state ((the selected category) ===\'93All (start state)\'94) return true;\
+		return item.category === state \
+	\}\
+\
+	return (\
+	jsx\
+		(on filter button) onChange = \{handleChange)\
+			(for filter, button values present)\
+		(in ul)const display.map ((item) => (\
+			<Item key =\{item.id\} name = \{item.name\} category = \{item.category\}/>\
+\
+
+\f0\b Item
+\f1\b0 \
+\
+Import React, \{useState\}\
+\
+Function Item (\{item, category\}) \{\
+	const [state, setState] = useState(start state)\
+	function handleClick() \
+		\{setState(cb!state)\} - \'93action\'94 to change state\
+	\
+	return (\
+	jsx\
+		Use state in ternary arg to change className for Li and Span\
+		(on Button) onClick = \{handleClick\}\
+		(in button value) \{state ternary arg for shown text\}\
+\
+Export d\'e9faut Item\
+		\
+	\
+	\
+	\
+\
+}

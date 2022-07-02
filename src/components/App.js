@@ -1,20 +1,27 @@
-import React from "react";
-import ShoppingList from "./ShoppingList";
-import itemData from "../data/items";
+import React, {useState} from "react"
+import ShoppingList from "./ShoppingList"
+import itemsData from "../data/items"
+import Header from "./Header"
 
 function App() {
+  const [Darkmode, setDarkmode] = useState(false)
+  
 
-  // replace 'false' with a state variable that can be toggled between true and false
-  // this will be used for the Dark Mode Toggle feature
-  const appClass = false ? "App dark" : "App light"
+  function handleDarkModeClick() {
+      setDarkmode(!Darkmode)
+  }
+  
 
   return (
-    <div className={appClass}>
-      <header>
-        <h2>Shopster</h2>
-        <button>Dark Mode</button>
-      </header>
-      <ShoppingList items={itemData} />
+    <div className={Darkmode? "App dark": "App"}>
+    <Header 
+        handle={handleDarkModeClick} 
+        dark={Darkmode}
+    />
+    <ShoppingList 
+     items = {itemsData}
+     
+    />
     </div>
   );
 }
